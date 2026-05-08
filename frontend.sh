@@ -15,7 +15,6 @@ stat() {
         echo -e "\e[31m FAILURE \e[0m"
         exit 1
     fi
-echo "running with user ID: $ID"
 
 echo "disabling the default nginx repo"
 dnf module disable nginx -y &>> /tmp/$COMPONENT.log
@@ -30,7 +29,7 @@ dnf install nginx -y &>> /tmp/$COMPONENT.log
 stat $?
 
 echo "downloading the frontend content"
-curl -L -o /tmp/frontend.zip https://stan-roboshop.s3.amazonaws.com/$COMPONENT-v3.zip &>> /tmp/$COMPONENT.log
+curl -L -o /tmp/frontend.zip https://stan-robotshop.s3.amazonaws.com/$COMPONENT-v3.zip /tmp/$COMPONENT.log
 stat $?
 
 echo "removing the old content"
@@ -44,3 +43,8 @@ systemctl enable nginx &>> /tmp/$COMPONENT.log
 systemctl start nginx &>> /tmp/$COMPONENT.log
 stat $?
 echo -e "\e[32m frontend setup is completed \e[0m"
+
+
+
+
+
