@@ -43,8 +43,3 @@ systemctl enable nginx &>> /tmp/$COMPONENT.log
 systemctl start nginx &>> /tmp/$COMPONENT.log
 stat $?
 echo -e "\e[32m frontend setup is completed \e[0m"
-
-
-
-
-
