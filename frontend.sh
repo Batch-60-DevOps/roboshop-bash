@@ -30,7 +30,7 @@ dnf install nginx -y &>> /tmp/$COMPONENT.log
 stat $?
 
 echo "downloading the frontend content"
-curl -L -o /tmp/frontend.zip https://stan-robotshop.s3.amazonaws.com/$COMPONENT-v3.zip /tmp/$COMPONENT.log
+curl -L -o /tmp/frontend.zip https://stan-robotshop.s3.amazonaws.com/$COMPONENT-v3.zip &>> /tmp/$COMPONENT.log
 stat $?
 
 echo "removing the old content"
