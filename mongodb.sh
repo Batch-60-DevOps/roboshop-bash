@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "configuration managment of the frontend application"
+echo "configuration managment of the mongodb application"
 ID=$(id -u)
 COMPONENT="mongodb"
 if [ $ID -ne 0 ]; then
@@ -21,14 +21,9 @@ echo "installing mongodb repo"
 cp mongodb.repo /etc/yum.repos.d/mongodb.repo &>> /tmp/$COMPONENT.log
 stat $?
 
-# dnf install mongodb-org -y 
-# systemctl enable mongod
-# systemctl start mongod
-
 echo "installing mongodb"
 dnf install mongodb-org -y &>> /tmp/$COMPONENT.log
 stat $?
-
 
 echo "starting mongodb service"
 systemctl enable mongod &>> /tmp/$COMPONENT.log
