@@ -26,7 +26,7 @@ dnf install mongodb-org -y &>> /tmp/$COMPONENT.log
 stat $?
 
 echo "updating the mongodb config file"
-sed -i -e 's/127.0.0.0/0.0.0.0/' /etc/mongod.conf &>> /tmp/$COMPONENT.log
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf &>> /tmp/$COMPONENT.log
 stat $?
 
 echo "starting mongodb service"
