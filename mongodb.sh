@@ -18,7 +18,7 @@ stat() {
 }
 
 echo "installing mongodb repo"
-cp mongodb.repo /etc/yum.repos.d/mongodb.repo &>> /tmp/$COMPONENT.log
+cp mongo.repo /etc/yum.repos.d/mongodb.repo &>> /tmp/$COMPONENT.log
 stat $?
 
 echo "installing mongodb"
