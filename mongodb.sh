@@ -24,9 +24,11 @@ stat $?
 echo "installing mongodb"
 dnf install mongodb-org -y &>> /tmp/$COMPONENT.log
 stat $?
+
 echo "updating the mongodb config file"
 sed -i -e 's/127.0.0.0/0.0.0.0/' /etc/mongod.conf &>> /tmp/$COMPONENT.log
 stat $?
+
 echo "starting mongodb service"
 systemctl enable mongod &>> /tmp/$COMPONENT.log
 systemctl start mongod &>> /tmp/$COMPONENT.log
