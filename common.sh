@@ -107,7 +107,7 @@ nodejs() {
     
     if [ "$COMPONENT" == "catalogue" ]; then
         echo -n "Injecting the schema :"
-        mongosh --host mongodb.robotshop.fun </app/db/master-data.js &>> $LOG
+        mongosh --host mongodb.footballo.space </app/db/master-data.js &>> $LOG
         stat $? 
     fi 
 
