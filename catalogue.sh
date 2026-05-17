@@ -84,4 +84,3 @@ systemctl enable $COMPONENT &>> $LOG
 systemctl start $COMPONENT &>> $LOG
 stat $? 
 echo -e "\e[32m $COMPONENT setup is completed \e[0m"
-
