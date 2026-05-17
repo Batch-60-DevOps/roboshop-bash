@@ -69,7 +69,7 @@ cp ${COMPONENT}.service /etc/systemd/system/${COMPONENT}.service
 stat $?
 echo -n "Starting $COMPONENT service :"
 
-echo "installing mongodb shell repo"
+echo "installing mongodb repo"
 cp mongo.repo /etc/yum.repos.d/mongodb.repo &>> $LOG
 stat $?
 echo "installing mongodb shell"
