@@ -35,8 +35,15 @@ dnf install nodejs -y &>> $LOG
 stat $?
 
 echo "creating roboshop user"
-useradd $APPUSER &>> $LOG
-stat $?
+id $APPUSER &>> $LOG
+if [ $? -ne 0 ]; then
+    echo "creating roboshop user account"
+    useradd $APPUSER &>> $LOG
+    stat $?
+else
+    echo "SKIPPING"
+    stat 0  
+fi
 
 echo "performing clean up and creating app directory"
 rm -rf /app/* &>> $LOG
