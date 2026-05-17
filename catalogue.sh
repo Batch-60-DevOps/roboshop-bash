@@ -46,7 +46,9 @@ else
 fi
 
 echo "performing clean up and creating app directory"
-rm -rf /app/* &>> $LOG
+rm -rf /app/ || true &>> $LOG
+stat $?
+echo "creating app directory"
 mkdir /app &>> $LOG
 stat $?
 
