@@ -38,6 +38,10 @@ echo "updating the redis config file"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/redis/redis.conf &>> $LOG
 stat $?
 
+echo "protecting mode is no"
+sed -i -e 's/protected-mode yes/protected-mode no/g' /etc/redis/redis.conf &>> $LOG
+stat $?
+
 echo "starting $COMPONENT service"
 systemctl enable $COMPONENT &>> $LOG
 systemctl start $COMPONENT &>> $LOG
